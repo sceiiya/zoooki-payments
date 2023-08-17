@@ -17,6 +17,10 @@
     --bijoo: #6E5BF4;
 }
 
+body{
+    font-family: 'Space Grotesk', sans-serif;
+}
+
 *{
     /* remove comment for easier element detecction for responsitivity debugging  */
     background-color: #6d5bf41c;
@@ -33,40 +37,142 @@
     height: 80px;
 }
 
-.heroSection{
+.heroSection {
+    /* background-image: url('./assets/images/F2V_ORqb0AAE6GP.jpg'); */
+    background-image: url('./assets/images/fuwamocoQ12.jpg');
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: right center;
     background-color: var(--mainBlue);
-    /* height: 80px; */
     width: 100%;
-    /* width: min(calc(80% - 2rem), 60rem); */
-    margin-inline: auto;
-    padding: 80px 0 0 0;
+    height: calc(100vh - 70px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* padding-left: 2rem;    */
+}
+
+.heroSection div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    height: inherit;
+
+    /* padding-left: 4.5rem; */
 }
 
 .heroSection h1{
     font-family: 'Space Grotesk', sans-serif;
-    font-style: bold;
-    font-size: 40px;
-    font-weight:1600;
+    /* font-style: bold; */
+    font-size: 60px;
+    font-weight: 1000;
+    line-height: .875em;
 }
 
 .heroSection h2{
     font-family: 'Nunito', sans-serif;
-    font-size: 25px;
-    font-weight: 300;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: .915em;
 }
+
+.heroSection h3{
+    font-family: 'Nunito', sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.05em;
+    margin-bottom: 20px;
+}
+
+.heroBGs {
+    z-index: 10;
+    display: block;
+    position: absolute;
+    right: 40px;
+    /* margin-right: 60px; */
+    width: 90%;
+    height: 600px;
+    /* background-image: url('./assets/images/F2V_ORqb0AAE6GP.jpg'); */
+    background-image: url('./assets/images/bibooDecrilus.jpg');
+    background-size: 60% auto;
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+
+  .productSection{
+    height: 75vh;
+
+  }
+
+  .productSection div{
+    /* display: flex; */
+    /* flex-direction: row; */
+  }
+
+  .productSection div{
+    /* display: flex; */
+    /* flex-direction: row; */
+  }
 
 .sectionated{
     background-color: var(--mainBlue);
     /* height: 80px; */
-    max-width: 850px;
+    /* max-width: 850px; */
     /* width: min(calc(80% - 2rem), 60rem); */
     margin-inline: auto;
 }
 
+/* for md screens */
 @media screen and (max-width: 768px) {
+    .heroSection{
+        /* background-size: 60% auto; */
+        /* background-position: right top; */
+    }
+
+    .heroSection h1{
+        font-size: 40px;
+        font-weight: 1000;    
+    }
+
+    .heroSection h2{
+        font-size: 30px;
+        font-weight: 600;    
+    }
+
     .sectionated{
         width: 100%;
         /* width: min(calc(80% - 2rem), 60rem); */
+    }
+
+    .heroSection div{
+        /* padding-left: 2rem; */
+    }
+}
+
+/* for sm screens */
+@media screen and (max-width: 390px) {
+    .heroSection h1{
+        font-size: 24px;
+        font-weight: 1000;    
+    }
+
+    .heroSection h2{
+        font-size: 18px;
+        font-weight: 600;    
+    }
+
+
+    .sectionated{
+        width: 100%;
+        /* width: min(calc(80% - 2rem), 60rem); */
+    }
+
+    .heroSection div{
+        /* padding-left: .5rem; */
     }
 }
 
