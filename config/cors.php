@@ -21,7 +21,8 @@ return [
 
     'allowed_origins' => [
         '*',
-        'https://zoooki-collab.wd49p.com'
+        'https://zoooki-collab.wd49p.com',
+        'https://dashboard.stripe.com',
     ],
 
     'allowed_origins_patterns' => [],
