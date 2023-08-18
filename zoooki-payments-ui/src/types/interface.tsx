@@ -1,4 +1,6 @@
-export interface product {
+import React from "react";
+
+export interface Product {
     id: number;
     collection: string;
     title: string;
@@ -11,3 +13,13 @@ export interface product {
     artist: string;
     artistlink: string;
 }
+
+export interface BagProps {
+    bag: number[];
+    addToBag: React.Dispatch<React.SetStateAction<number[]>>;
+    productId: number;
+  }
+
+export interface Bagtype {
+    bag: number[];
+  }

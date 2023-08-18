@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Moshi moshi~</title>
+        <title>Orders Here</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -16,6 +16,17 @@
         </style>
     </head>
     <body class="antialiased">
-        blob
+        <div style=" padding-left: 30px; display: flex; justify-content: center; flex-direction: column; gap: 30px">
+            @foreach ($orders as $order)
+                <div class="" style="margin: 10px; width: 50%; display: flex; flex-direction: column">
+                    <h1>{{$order->id}}</h1>
+                    <h1>{{$order->status}}</h1>
+                    <h1>{{$order->total_price}}</h1>
+                    <h1>{{$order->session_id}}</h1>
+                </div>
+            @endforeach
+        </div>
+        <p>
+        </p>
     </body>
 </html>

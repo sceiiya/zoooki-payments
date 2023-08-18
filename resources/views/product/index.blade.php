@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Moshi moshi~</title>
+        <title>Products Here</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -16,6 +16,20 @@
         </style>
     </head>
     <body class="antialiased">
-        blob
+        <div style="display: flex; justify-content: center; flex-direction: row">
+            @foreach ($products as $product)
+                <div class="" style="margin: 10px; width: 50%; display: flex; flex-direction: column">
+                    <img src="{{$product->image}}" alt="">
+                    <h4>{{$product->name}}</h4>
+                    <h5 style="margin-top: 6px; font-size: 1.2rem">${{$product->price}}</h5>
+                </div>
+            @endforeach
+        </div>
+        <p>
+            <form action="{{ route('checkout') }}" method="post">
+                @csrf
+                <button class="">Checkout</button>
+            </form>
+        </p>
     </body>
 </html>
