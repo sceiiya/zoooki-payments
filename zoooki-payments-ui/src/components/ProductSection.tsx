@@ -99,7 +99,7 @@ const ProductSection = () =>
                     >
                         <div className={'p-4 cont'}>
                             <div className="productImage">
-                                <img src={`/src/assets/images/${image}`} alt='product' height="100%" width="100%" />
+                                <img src={`/images/products/${image}`} alt='product' height="100%" width="100%" />
                             </div>
                             <div className="productDetails">
                                 <h2>{title}</h2>
