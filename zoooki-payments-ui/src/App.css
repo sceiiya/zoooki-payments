@@ -106,7 +106,7 @@ body{
   }
 
   .productSection{
-    mim-height: 85vh;
+    min-height: 85vh;
     height: fit-content;
   }
 
