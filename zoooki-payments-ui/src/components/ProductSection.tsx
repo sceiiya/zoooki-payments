@@ -109,7 +109,7 @@ const ProductSection = () =>
                                 <p>Price: ¥&nbsp;{price}</p>
                                 <p>{description}</p>
                                 <button>Add to Bag</button>
-                                <button>Buy Now</button>
+                                <button>Quick Buy!</button>
                             </div>
                         </div>
                     </section>
