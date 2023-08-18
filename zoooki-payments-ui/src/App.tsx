@@ -6,11 +6,15 @@ import Home from './views/Home'
 import About from './views/About'
 import Contacts from './views/Contacts'
 import Success from './views/Success'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient
 
 function App() {
 
   return (
     <>
+    <QueryClientProvider client={queryClient}>
     <HelmetProvider>
       <Router>
         <NavBar />
@@ -27,6 +31,7 @@ function App() {
         </Routes>
       </Router>
     </HelmetProvider>
+    </QueryClientProvider>
     </>
   )
 }
