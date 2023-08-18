@@ -23,13 +23,16 @@ return [
         '*',
         'https://zoooki-collab.wd49p.com',
         'https://dashboard.stripe.com',
+        'http://192.168.100.5',
+        'http://192.168.100.5:2828',
+
     ],
 
-    'allowed_origins_patterns' => [],
+    'allowed_origins_patterns' => ['*'],
 
     'allowed_headers' => ['*'],
 
-    'exposed_headers' => [],
+    'exposed_headers' => ['*'],
 
     'max_age' => 0,
 

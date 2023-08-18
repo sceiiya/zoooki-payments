@@ -14,24 +14,24 @@ function App() {
 
   return (
     <>
-    <QueryClientProvider client={queryClient}>
     <HelmetProvider>
       <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Navigate to="/campaign" />} />
-          <Route path="/campaign" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
-          {/* <Route path="/cart" element={<Cart />} /> */}
+        <QueryClientProvider client={queryClient}>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Navigate to="/campaign" />} />
+            <Route path="/campaign" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contacts" element={<Contacts />} />
+            {/* <Route path="/cart" element={<Cart />} /> */}
 
-          <Route path="/success" element={<Success />} />
-          <Route path="*" element={<Navigate to="/" />} />
-          {/* <Route path="*" element={<PageNotFound />} /> */}
-        </Routes>
+            <Route path="/success" element={<Success />} />
+            <Route path="*" element={<Navigate to="/" />} />
+            {/* <Route path="*" element={<PageNotFound />} /> */}
+          </Routes>
+        </QueryClientProvider>
       </Router>
     </HelmetProvider>
-    </QueryClientProvider>
     </>
   )
 }

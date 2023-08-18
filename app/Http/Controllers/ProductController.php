@@ -26,6 +26,8 @@ class ProductController extends Controller
 
     public function checkout(Request $request)
     {
+        // return response()->json(['req' => $request]);
+        return response()->json($request);
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
         $bag = $request->bag;

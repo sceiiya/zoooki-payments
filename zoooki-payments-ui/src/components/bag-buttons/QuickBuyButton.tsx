@@ -18,12 +18,58 @@ const QuickBuyBttn: React.FC<BagProps> = ({bag, addToBag, productId}) =>
         {
             onSuccess: async (data) => {
               const responseJson = await data.json()
-              const stripeCheckoutUrl = responseJson.checkout_url
+              const checkoutUrl = responseJson.checkout_url
               // Redirect to the checkout URL
-              window.location.href = stripeCheckoutUrl
+              window.location.href = checkoutUrl
             },
         }
     );
+
+
+//     const checkout = async (bag: number[], currentDomain: string): Promise<any> =>
+// {
+//     let bagged: number[] = [...bag]
+//     if(!bag.includes(productId)) {
+//         bagged = [...bag, productId];
+//       }
+
+//       const axiosInstance = axios.create({
+//         baseURL: 'http://127.0.0.1:8000/api/checkout', 
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//       });
+      
+//       // Send a POST request
+//       const data = {
+//         bag: bag,
+//         domain: currentDomain
+//       }
+
+//       axiosInstance.post('https://api-zoooki-collab.wd49p.com/api/checkout', data)
+//         .then(response => {
+//             console.log(response)
+//           // Handle the response data
+//         })
+//         .catch(error => {
+//             console.log(error)
+//           // Handle errors
+//         });
+// }
+
+//     const checkoutMutation = useMutation({
+        
+//         mutationFn: () => checkout(bag, currentDomain),
+//         onSuccess: (data) => {
+//         console.log(data);
+//         // const stripeCheckoutUrl = data.checkout_url;
+//         // Redirect to the checkout URL
+//         // window.location.href = stripeCheckoutUrl;
+//       },
+//     }
+//   );
+
+
 
     const handleCheckout = () => {
         checkoutMutation.mutate()
