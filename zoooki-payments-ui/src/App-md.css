@@ -1,0 +1,22 @@
+/* for md screens */
+@media screen and (max-width: 768px) {
+    .heroSection{
+        height: fit-content;
+        /* background-size: 60% auto; */
+        /* background-position: right top; */
+    }
+
+    .heroSection h1{
+        font-size: 40px;
+        font-weight: 1000;    
+    }
+
+    .heroSection h2{
+        font-size: 30px;
+        font-weight: 600;    
+    }
+
+    .productSection{
+        flex-direction: column;
+    }
+}

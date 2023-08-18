@@ -5,6 +5,7 @@
     --mainPink: #fbb8de;
     --mainBG: #f6ddd6;
     --mainDark: #171720;
+    --mainText: #1b185b;
     --mainSupDark: #4b5168;
 
     --moco: #ff83ca;
@@ -23,7 +24,7 @@ body{
 
 *{
     /* remove comment for easier element detecction for responsitivity debugging  */
-    background-color: #6d5bf41c;
+    background-color: #f3404018;
 }
 .meg{
     justify-content: center;
@@ -52,6 +53,7 @@ body{
     align-items: center;
     justify-content: flex-start;
     /* padding-left: 2rem;    */
+    color: var(--mainText);
 }
 
 .heroSection div{
@@ -104,18 +106,72 @@ body{
   }
 
   .productSection{
-    height: 75vh;
-
+    height: 85vh;
   }
 
-  .productSection div{
+  .productSection{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .productSection:nth-child(odd){
+    background-color: var(--mainBlue);
     /* display: flex; */
     /* flex-direction: row; */
   }
 
   .productSection div{
+    width: 100%;
+    box-sizing: border-box;
     /* display: flex; */
     /* flex-direction: row; */
+  }
+
+  .productDetails{
+    width: 66%;
+  }
+
+  .productDetails a{
+    color: var(--mainText);
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+
+  .productDetails p{
+    margin-bottom: 0;    
+}
+
+.productDetails p:first-of-type{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: .8rem;
+  }
+
+  .productDetails p:last-of-type{
+    margin-top: .8rem;
+  }
+
+  .productDetails button{
+    margin-top: 1rem;
+    margin-right: 1.2rem;
+  }
+
+  .productImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34%;
+    height: inherit;
+  }
+
+  .productImage img{
+    /* width: auto; */
+    height: 100%;
+    object-fit: cover;
   }
 
 .sectionated{
@@ -124,56 +180,6 @@ body{
     /* max-width: 850px; */
     /* width: min(calc(80% - 2rem), 60rem); */
     margin-inline: auto;
-}
-
-/* for md screens */
-@media screen and (max-width: 768px) {
-    .heroSection{
-        /* background-size: 60% auto; */
-        /* background-position: right top; */
-    }
-
-    .heroSection h1{
-        font-size: 40px;
-        font-weight: 1000;    
-    }
-
-    .heroSection h2{
-        font-size: 30px;
-        font-weight: 600;    
-    }
-
-    .sectionated{
-        width: 100%;
-        /* width: min(calc(80% - 2rem), 60rem); */
-    }
-
-    .heroSection div{
-        /* padding-left: 2rem; */
-    }
-}
-
-/* for sm screens */
-@media screen and (max-width: 390px) {
-    .heroSection h1{
-        font-size: 24px;
-        font-weight: 1000;    
-    }
-
-    .heroSection h2{
-        font-size: 18px;
-        font-weight: 600;    
-    }
-
-
-    .sectionated{
-        width: 100%;
-        /* width: min(calc(80% - 2rem), 60rem); */
-    }
-
-    .heroSection div{
-        /* padding-left: .5rem; */
-    }
 }
 
 .full-bleed{
