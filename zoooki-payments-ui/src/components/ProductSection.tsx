@@ -1,15 +1,15 @@
 import { useQuery } from "react-query"
 import { FaTwitter } from 'react-icons/fa'
 
-// import imgBiboo from "../assets/images/bibooZeroEgg.jpg"
-// import imgShiorin from "../assets/images/shioriSaiha.jpg"
-// import imgFuwamoco from "../assets/images/fuwamocoQ12.jpg"
-// import imgBijou from "../assets/images/bibooDecrilus.jpg"
-
-import { product } from "../types/interface"
+import { Product } from "../types/interface"
+import { useState } from "react"
+import QuickBuyBttn from "./bag-buttons/QuickBuyButton"
+import AddToBagBttn from "./bag-buttons/AddToBagButton"
 
 const ProductSection = () =>
 {
+    const [bag, setBag] = useState<number[]>([])
+
     const { data: products, error, isLoading } = useQuery('products', async () => {
         const response = await fetch('https://api-zoooki-collab.wd49p.com/api/products');
         const data = await response.json();
@@ -75,7 +75,7 @@ const ProductSection = () =>
 
     return (
         <div>
-            {products.map((product: product, index:number) => {
+            {products.map((product: Product, index:number) => {
                 const {
                     id,
                     image,
@@ -94,7 +94,7 @@ const ProductSection = () =>
                     <section
                         key={index}
                         className={`container d-flex productSection ${
-                            index % 2 === 0 ? 'full-bleed' : ''
+                            index % 2 === 0 ? '' : 'full-bleed'
                         }`}
                     >
                         <div className={'p-4 cont'}>
@@ -104,12 +104,12 @@ const ProductSection = () =>
                             <div className="productDetails">
                                 <h2>{title}</h2>
                                 <h3>{collection}</h3>
-                                <p>Artist:&nbsp;<a href={artistlink}>&nbsp;{id}<FaTwitter />&nbsp;{artist}</a></p> <p>Stocks: {stocks}</p>
+                                <p>Artist:&nbsp;<a href={artistlink}>&nbsp;<FaTwitter />&nbsp;{artist}</a></p> <p>Stocks: {stocks}</p>
                                 <p>Type: {type}</p> <p>Sold: {sold}</p>
                                 <p>Price: ¥&nbsp;{price}</p>
                                 <p>{description}</p>
-                                <button>Add to Bag</button>
-                                <button>Quick Buy!</button>
+                                <AddToBagBttn bag={bag} addToBag={setBag} productId={id} />
+                                <QuickBuyBttn bag={bag} addToBag={setBag} productId={id} />
                             </div>
                         </div>
                     </section>
