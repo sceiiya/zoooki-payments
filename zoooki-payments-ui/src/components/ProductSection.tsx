@@ -77,6 +77,7 @@ const ProductSection = () =>
         <div>
             {products.map((product: product, index:number) => {
                 const {
+                    id,
                     image,
                     title,
                     collection,
@@ -103,7 +104,7 @@ const ProductSection = () =>
                             <div className="productDetails">
                                 <h2>{title}</h2>
                                 <h3>{collection}</h3>
-                                <p>Artist:&nbsp;<a href={artistlink}><FaTwitter />&nbsp;{artist}</a></p> <p>Stocks: {stocks}</p>
+                                <p>Artist:&nbsp;<a href={artistlink}>&nbsp;{id}<FaTwitter />&nbsp;{artist}</a></p> <p>Stocks: {stocks}</p>
                                 <p>Type: {type}</p> <p>Sold: {sold}</p>
                                 <p>Price: ¥&nbsp;{price}</p>
                                 <p>{description}</p>
