@@ -1,5 +1,13 @@
 /* for sm screens */
 @media screen and (max-width: 390px) {
+    .heroSection{
+        background-size: 72%;
+        min-height: 512px;
+        background-position: right 1.8rem;
+        justify-content: end;
+
+    }
+
     .heroSection h1{
         font-size: 24px;
         font-weight: 1000;    
@@ -11,8 +19,9 @@
     }
 
     .heroSection h3{
-        font-size: 14px;
+        font-size: 11px;
         font-weight: 600;    
+        margin-top: 15px;
     }
 
     .productSection{
@@ -22,6 +31,13 @@
 
     .productSection div{
         height: fit-content;
+    }
+
+    .productImage{
+        /* max-height: 250px; */
+    }
+    .productImage img{
+        max-height: 290px;
     }
     
 }

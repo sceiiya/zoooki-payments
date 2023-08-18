@@ -2,8 +2,10 @@
 @media screen and (max-width: 768px) {
     .heroSection{
         height: fit-content;
-        /* background-size: 60% auto; */
-        /* background-position: right top; */
+        background-size: 72%;
+        min-height: 662px;
+        background-position: right 1.8rem;
+        justify-content: end;
     }
 
     .heroSection h1{
@@ -17,6 +19,7 @@
     }
 
     .heroSection h3{
+        margin-top: 80px;
         font-size: 16px;
         font-weight: 600;    
     }
@@ -35,5 +38,6 @@
     
     .productImage{
         margin-bottom: 1rem;
+        max-height: 480px;
     }
 }
