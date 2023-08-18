@@ -1,7 +1,7 @@
 const HeroSection = () => 
 {
     return <>
-        <section className="container heroSection">
+        <section className="container heroSection full-bleed">
             {/* heading section */}
             <div className="mt-5">
                 <h1>
