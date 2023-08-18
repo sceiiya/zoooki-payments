@@ -6,13 +6,22 @@
     }
 
     .heroSection h2{
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 600;    
+    }
+
+    .heroSection h3{
+        font-size: 14px;
+        font-weight: 600;    
+    }
+
+    .productSection{
+        padding: 0;
+        margin: 0;
     }
 
     .productSection div{
         height: fit-content;
-        flex-direction: column !important;
-      }
+    }
     
 }

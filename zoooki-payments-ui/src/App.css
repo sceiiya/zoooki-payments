@@ -109,9 +109,12 @@ body{
     height: 85vh;
   }
 
-  .productSection{
+  .productSection .cont{
     display: flex;
     flex-direction: row;
+  }
+  .productSection:nth-child(odd) .cont{
+    flex-direction: row-reverse;
   }
 
   .productSection:nth-child(odd){

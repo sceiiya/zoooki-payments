@@ -85,7 +85,7 @@ const ProductSection = ({}) =>
                             index % 2 === 0 ? 'full-bleed' : ''
                         }`}
                     >
-                        <div className={`d-flex p-4 `}>
+                        <div className={'p-4 cont'}>
                             <div className="productImage">
                                 <img src={image} alt='product' height="100%" width="100%" />
                             </div>

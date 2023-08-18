@@ -16,7 +16,24 @@
         font-weight: 600;    
     }
 
+    .heroSection h3{
+        font-size: 16px;
+        font-weight: 600;    
+    }
+
     .productSection{
+        height: fit-content;
+    }
+
+    .productSection .cont{
         flex-direction: column;
+    }
+
+    .productSection:nth-child(odd) .cont{
+      flex-direction: column;
+    }
+    
+    .productImage{
+        margin-bottom: 1rem;
     }
 }
