@@ -129,12 +129,11 @@ class ProductController extends Controller
             $customer = $session->customer_details;
             $data = ['name' => $customer->name];
 
-
-        Mail::send('emails.welcome', $data, function ($message) {
-            $message->from('us@example.com', 'Laravel');
+        // Mail::send('emails.welcome', $data, function ($message) {
+        //     $message->from('us@example.com', 'Laravel');
          
-            $message->to('foo@example.com')->cc('bar@example.com');
-        });
+        //     $message->to('foo@example.com')->cc('bar@example.com');
+        // });
 
         Mail::send('payment.cancel', $data, function($message) use ($customer)
         {

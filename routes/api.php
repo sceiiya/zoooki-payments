@@ -27,10 +27,10 @@ Route::get('/sanctum/csrf-cookie', function (Request $request) {
 
 Route::get('/', function () {
     sleep(2);
-    return Redirect::to('https://zoooki-collab.wd49p.com/');
+    return Redirect::to('https://zoooki-collab.vercel.app/');
 });
 Route::get('/redirect-to-home', function () {
-    return Redirect::to('https://zoooki-collab.wd49p.com/');
+    return Redirect::to('https://zoooki-collab.vercel.app/');
 })->name('redirectToHome');
 
 Route::get('/products', [ProductController::class, 'index'])->name('product.inv');
