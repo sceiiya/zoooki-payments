@@ -20,6 +20,7 @@ return [
     'allowed_methods' => ['*', 'post'],
 
     'allowed_origins' => [
+        '*',
         'https://zoooki-collab.vercel.app',
         'https://vercel.app',
         'http://localhost:2828',
