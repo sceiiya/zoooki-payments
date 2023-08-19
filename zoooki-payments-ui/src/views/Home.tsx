@@ -14,6 +14,11 @@ const Home = () =>
         <HeroSection/>
         </div>
         <ProductSection />
+        <footer>
+            <a href="https://github.com/sceiiya">
+                Designed and Developed by Sceiiya
+            </a>
+        </footer>
     </>
 }
 

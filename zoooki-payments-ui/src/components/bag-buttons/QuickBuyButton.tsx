@@ -7,7 +7,7 @@ const QuickBuyBttn: React.FC<BagProps> = ({ bag, addToBag, productId }) => {
 
   const checkoutMutation = useMutation(
     () =>
-      fetch("https://api-zoooki-collab.wd49p.com/api/checkout/", {
+      fetch("http://127.0.0.1:8000/api/checkout/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

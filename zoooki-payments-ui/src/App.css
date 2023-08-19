@@ -42,7 +42,7 @@ body{
     background-image: url('./assets/images/fuwamocoQ12.jpg');
     background-size: 55%;
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: right top;
     background-color: var(--mainBlue);
     width: 100%;
     height: calc(100vh - 70px);
@@ -167,4 +167,24 @@ body{
 .full-bleed{
     box-shadow: 0 0 0 100vmax var(--mainBlue);
     clip-path: inset(0 -100vmax)
+}
+
+footer{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--fuwa) ;
+}
+
+footer a{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-family: 'Nunito';
+  margin: 4px 0 4px 0;
 }
