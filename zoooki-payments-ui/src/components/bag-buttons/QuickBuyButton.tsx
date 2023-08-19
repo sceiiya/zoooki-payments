@@ -1,42 +1,26 @@
 import React from "react";
 import { BagProps } from "../../types/interface";
 import { useMutation } from "react-query";
-import axios from "axios";
 
 const QuickBuyBttn: React.FC<BagProps> = ({ bag, addToBag, productId }) => {
   const currentDomain = window.location.origin;
 
   const checkoutMutation = useMutation(
-    async () => {
-      // Fetch the CSRF token from your Laravel backend
-      const response = await axios.get("https://api-zoooki-collab.wd49p.com/api/sanctum/csrf-cookie");
-      
-      // Include the CSRF token in the headers of the POST request
-      const headers = {
-        "X-Requested-With": "XMLHttpRequest",
-        "X-CSRF-TOKEN": response.data, // Replace with your token field name
-        "Content-Type": "application/json",
-      };
-
-      // Make the actual POST request
-      const postResponse = await axios.post(
-        "https://api-zoooki-collab.wd49p.com/api/checkout/",
-        {
-          bag: bag,
-          domain: currentDomain,
+    () =>
+      fetch("http://127.0.0.1:8000/api/checkout/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        { headers }
-      );
-
-      return postResponse.data;
-    },
+        body: JSON.stringify({ bag: bag, domain: currentDomain }),
+      }).then(response => response.json()), // Parse the JSON response
     {
       onSuccess: (data) => {
-        console.log(data);
+        // console.log(data);
         // Access the required data from 'data' object
-        // const checkoutUrl = data.checkout_url;
+        const checkoutUrl = data.checkout_url;
         // Redirect to the checkout URL
-        // window.location.href = checkoutUrl;
+        window.location.href = checkoutUrl;
       },
     }
   );
