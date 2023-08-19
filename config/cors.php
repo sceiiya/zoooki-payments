@@ -15,9 +15,9 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/*'],
 
-    'allowed_methods' => ['*', 'post'],
+    'allowed_methods' => ['*'],
 
     'allowed_origins' => [
         '*',
@@ -26,8 +26,6 @@ return [
         'http://localhost:2828',
         'https://zoooki-collab.wd49p.com',
         'https://dashboard.stripe.com',
-        'http://192.168.100.5',
-        'http://192.168.100.5:2828',
     ],
 
     'allowed_origins_patterns' => [],
