@@ -20,6 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:sanctum')->get('/csrf-cookie', function (Request $request) {
+    return response()->json(['message' => 'CSRF token cookie set']);
+});
+
 Route::get('/', function () {
     sleep(2);
     return Redirect::to('https://zoooki-collab.wd49p.com/');
