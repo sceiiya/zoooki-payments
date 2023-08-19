@@ -188,3 +188,36 @@ footer a{
   font-family: 'Nunito';
   margin: 4px 0 4px 0;
 }
+
+.productSection:nth-child(even) button{
+  background-color: var(--mainPink);
+  transition: all ease-in-out 0.3s;
+  font-size: 1.2rem;
+}
+
+.productSection:nth-child(even) button:hover{
+  background-color: var(--fuwawa);
+}
+
+.productSection:nth-child(odd) button{
+  background-color: var(--moco);
+  transition: all ease-in-out 0.3s;
+  font-size: 1.2rem;
+}
+
+.productSection:nth-child(odd) button:hover{
+  background-color: var(--fuwa);
+}
+
+button{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+button:hover{
+  background-color: var(--fuwa);
+  transition: all ease-in-out 0.3s;
+  transform: scale(1.04);
+}
