@@ -96,9 +96,9 @@ class ProductController extends Controller
 
             // $order = Order::where('session_id', $session->id)->get();
             $order = Order::where('session_id', $session->id)->where('status', 'unpaid')->first();
-            // if (!$order) {
-            //     throw new NotFoundHttpException();
-            // }
+            if (!$order) {
+                throw new NotFoundHttpException();
+            }
 
             if ($order && $order->status === 'unpaid') {
                 $order->status = 'paid';
@@ -191,11 +191,11 @@ class ProductController extends Controller
                 $customer = $sessionRet->customer_details;
                 $data = ['name' => $customer->name];
     
-                // Mail::send('payment.success', $data, function($message) use ($customer)
-                // {
-                //     $message->to($customer->email, $customer->name)->subject(env('APP_NAME').' | Payment Succeeded');
-                //     $message->from(env('MAIL_USERNAME'), env('APP_NAME'));
-                // });
+                Mail::send('payment.success', $data, function($message) use ($customer)
+                {
+                    $message->to($customer->email, $customer->name)->subject(env('APP_NAME').' | Payment Succeeded');
+                    $message->from(env('MAIL_USERNAME'), env('APP_NAME'));
+                });
 
 
              }
@@ -212,11 +212,11 @@ class ProductController extends Controller
                     $customer = $sessionRet->customer_details;
                     $data = ['name' => $customer->name];
         
-                    // Mail::send('payment.cancel', $data, function($message) use ($customer)
-                    // {
-                    //     $message->to($customer->email, $customer->name)->subject(env('APP_NAME').' | Unpaid Order');
-                    //     $message->from(env('MAIL_USERNAME'), env('APP_NAME'));
-                    // });
+                    Mail::send('payment.cancel', $data, function($message) use ($customer)
+                    {
+                        $message->to($customer->email, $customer->name)->subject(env('APP_NAME').' | Unpaid Order');
+                        $message->from(env('MAIL_USERNAME'), env('APP_NAME'));
+                    });
                 }
           default:
             echo 'Received unknown event type ' . $event->type;
