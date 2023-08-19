@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/sanctum/csrf-cookie', function (Request $request) {
     $token = csrf_token();
-    return response()->json($token);
+    return response()->json(['token' => $token]);
 });
 
 Route::get('/', function () {
