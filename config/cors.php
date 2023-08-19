@@ -21,7 +21,6 @@ return [
 
     'allowed_origins' => [
         'http://localhost:2828',
-        '*',
         'https://zoooki-collab.wd49p.com',
         'https://dashboard.stripe.com',
         'http://192.168.100.5',
