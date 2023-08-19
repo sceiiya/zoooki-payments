@@ -20,6 +20,8 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
+        '*',
+        'https://vercel.app',
         'http://localhost:2828',
         'https://zoooki-collab.wd49p.com',
         'https://dashboard.stripe.com',
