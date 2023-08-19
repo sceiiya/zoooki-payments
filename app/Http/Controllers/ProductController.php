@@ -27,56 +27,56 @@ class ProductController extends Controller
     public function checkout(Request $request)
     {
         // return response()->json(['req' => $request]);
-        return response()->json($request);
-        Stripe::setApiKey(env('STRIPE_SECRET'));
+        return response($request);
+        // Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        $bag = $request->bag;
-        $domain = $request->domain;
+        // $bag = $request->bag;
+        // $domain = $request->domain;
 
-        // $products[] = [];
-        // $products = Product::where('id', $request->id)->first();
-        $products = Product::whereIn('id', $bag)->get();
+        // // $products[] = [];
+        // // $products = Product::where('id', $request->id)->first();
+        // $products = Product::whereIn('id', $bag)->get();
 
-        $lineItems = [];
-        $totalPrice = 0;
+        // $lineItems = [];
+        // $totalPrice = 0;
 
-        foreach ($products as $product) {
-            $totalPrice += $product->price;
-            $lineItems[] = [
-                'price_data' => [
-                    'currency' => 'jpy',
-                    'product_data' => [
-                      'name' => $product->title,
-                      'images' => [$domain.'/images/products/'.$product->image]
-                    ],
-                    'unit_amount' => $product->price,
-                ],
-                'quantity' => 1,
-            ];
-        }
+        // foreach ($products as $product) {
+        //     $totalPrice += $product->price;
+        //     $lineItems[] = [
+        //         'price_data' => [
+        //             'currency' => 'jpy',
+        //             'product_data' => [
+        //               'name' => $product->title,
+        //               'images' => [$domain.'/images/products/'.$product->image]
+        //             ],
+        //             'unit_amount' => $product->price,
+        //         ],
+        //         'quantity' => 1,
+        //     ];
+        // }
 
-        // this should be on the webhook and will exe3cute when already paid
-        foreach ($products as $product) {
-            $product->decrement('quantity');
-            $product->increment('sold');
-            $product->save();
-        } 
+        // // this should be on the webhook and will exe3cute when already paid
+        // foreach ($products as $product) {
+        //     $product->decrement('quantity');
+        //     $product->increment('sold');
+        //     $product->save();
+        // } 
 
-        $checkout_session = Session::create([
-            'line_items' => $lineItems,
-            'mode' => 'payment',
-            'success_url' => route('checkout.success', [], true)."?session_id={CHECKOUT_SESSION_ID}",
-            'cancel_url' => route('checkout.cancel', [], true)."?session_id={CHECKOUT_SESSION_ID}",
-          ]);
+        // $checkout_session = Session::create([
+        //     'line_items' => $lineItems,
+        //     'mode' => 'payment',
+        //     'success_url' => route('checkout.success', [], true)."?session_id={CHECKOUT_SESSION_ID}",
+        //     'cancel_url' => route('checkout.cancel', [], true)."?session_id={CHECKOUT_SESSION_ID}",
+        //   ]);
 
-          $order = new Order();
-          $order->status = 'unpaid';
-          $order->total_price = $totalPrice;
-          $order->session_id = $checkout_session->id;
-          $order->save();
+        //   $order = new Order();
+        //   $order->status = 'unpaid';
+        //   $order->total_price = $totalPrice;
+        //   $order->session_id = $checkout_session->id;
+        //   $order->save();
 
-        // return redirect($checkout_session->url);
-        return response()->json(['checkout_url' => $checkout_session->url]);
+        // // return redirect($checkout_session->url);
+        // return response()->json(['checkout_url' => $checkout_session->url]);
     }
 
     public function success(Request $request)

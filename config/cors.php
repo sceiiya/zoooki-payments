@@ -15,11 +15,12 @@ return [
     |
     */
 
-    'paths' => ['api/*'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
+        'http://localhost:2828',
         '*',
         'https://zoooki-collab.wd49p.com',
         'https://dashboard.stripe.com',
@@ -28,11 +29,11 @@ return [
 
     ],
 
-    'allowed_origins_patterns' => ['*'],
+    'allowed_origins_patterns' => [],
 
     'allowed_headers' => ['*'],
 
-    'exposed_headers' => ['*'],
+    'exposed_headers' => [],
 
     'max_age' => 0,
 
