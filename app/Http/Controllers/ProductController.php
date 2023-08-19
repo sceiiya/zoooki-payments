@@ -57,7 +57,7 @@ class ProductController extends Controller
 
         // // this should be on the webhook and will exe3cute when already paid
         // foreach ($products as $product) {
-        //     $product->decrement('quantity');
+        //     $product->decrement('stocks');
         //     $product->increment('sold');
         //     $product->save();
         // } 
