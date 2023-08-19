@@ -25,7 +25,6 @@ return [
         'https://dashboard.stripe.com',
         'http://192.168.100.5',
         'http://192.168.100.5:2828',
-
     ],
 
     'allowed_origins_patterns' => [],
