@@ -9,7 +9,7 @@ const QuickBuyBttn: React.FC<BagProps> = ({ bag, addToBag, productId }) => {
   const checkoutMutation = useMutation(
     async () => {
       // Fetch the CSRF token from your Laravel backend
-      const response = await axios.get("/sanctum/csrf-cookie");
+      const response = await axios.get("https://api-zoooki-collab.wd49p.com/api/sanctum/csrf-cookie");
       
       // Include the CSRF token in the headers of the POST request
       const headers = {
