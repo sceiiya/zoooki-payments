@@ -1,17 +1,8 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "build",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ],
-  "routes": [
-    { "src": "/campaign", "dest": "/index.html" },
-    { "src": "/about", "dest": "/index.html" },
-    { "src": "/contacts", "dest": "/index.html" },
-    { "src": "/success", "dest": "/index.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
