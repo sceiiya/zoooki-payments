@@ -26,6 +26,8 @@ return [
         'http://localhost:2828',
         'https://zoooki-collab.wd49p.com',
         'https://dashboard.stripe.com',
+        'https://zoooki-collab.wd49p.com',
+        'https://zoooki-collab.wd49p.com/campaign'
     ],
 
     'allowed_origins_patterns' => [],

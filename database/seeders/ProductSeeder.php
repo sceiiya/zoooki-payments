@@ -63,7 +63,7 @@ class ProductSeeder extends Seeder
         //         'title' => "Shiorin's Innocent Embrace",
         //         'type' => "Hoodie",
         //         'price' => 5500,
-        //         'stocks' => 888,
+        //         'stocks' => 900,
         //         'description' => "Be with Shiori and enjoy the everlasting gentle 'innocent' embrace you will get when you where Shiori's Hoodie!",
         //         'image' => 'shioriSakana.jpg',
         //         'artist' => "魚",
